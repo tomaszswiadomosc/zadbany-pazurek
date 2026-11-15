@@ -1,0 +1,93 @@
+/* =====================================================================
+   ANIMACJE – zestaw do wklejenia na dowolną stronę
+   Wejścia przy przewijaniu, linia pod nagłówkiem, odblask kart,
+   pasek postępu, pasek haseł (marquee), pas ze zdjęciem (paralaksa),
+   licznik liczb. Wszystkie nazwy mają przedrostek "an-",
+   żeby nie gryzły się z klasami strony.
+   ===================================================================== */
+
+/* 1. USTAWIENIA – zmień kolory pod swoją stronę */
+:root{
+  --an-ease: cubic-bezier(.16,.68,.24,1); /* miękkie, „drogie” hamowanie */
+  --an-time: .9s;                         /* długość wejścia */
+  --an-step: 90ms;                        /* odstęp między kolejnymi elementami */
+  --an-c1: #0E92D6;                       /* kolor 1 (linia, pasek postępu) – błękit Zadbanego Pazurka */
+  --an-c2: #7CCBF2;                       /* kolor 2 (gradient, kropki) */
+  --an-dark: #0E2A44;                     /* tło paska haseł */
+}
+
+/* 2. WEJŚCIA PRZY PRZEWIJANIU
+   Element dostaje data-anim="up|left|right|scale|blur|clip|rise".
+   Bez JavaScriptu nic nie jest ukryte (działa tylko z klasą an-js). */
+.an-js [data-anim]{
+  opacity:0;
+  transition-property:opacity,transform,clip-path,filter;
+  transition-duration:var(--an-time);
+  transition-timing-function:var(--an-ease);
+  transition-delay:calc(var(--an-i,0) * var(--an-step));
+}
+.an-js [data-anim="up"]   {transform:translateY(38px)}
+.an-js [data-anim="left"] {transform:translateX(-46px)}
+.an-js [data-anim="right"]{transform:translateX(46px)}
+.an-js [data-anim="scale"]{transform:scale(.92)}
+.an-js [data-anim="blur"] {filter:blur(14px);transform:translateY(20px)}
+.an-js [data-anim="clip"] {clip-path:inset(0 0 102% 0);transform:translateY(16px)} /* tekst odsłania się spod maski */
+.an-js [data-anim="rise"] {transform:translateY(64px) scale(.97)}
+.an-js [data-anim].an-in  {opacity:1;transform:none;filter:none;clip-path:inset(0 0 0 0)}
+/* po zakończeniu: zdejmujemy maskę (cienie, ogonki liter) i opóźnienie (szybki hover) */
+.an-js [data-anim].an-done{transition-delay:0s;clip-path:none}
+
+/* 3. ZDJĘCIE „ODDALA SIĘ” PRZY WEJŚCIU
+   Dodaj klasę an-zoom do <img> wewnątrz elementu z data-anim. */
+.an-js [data-anim] .an-zoom{transform:scale(1.14);transition:transform 1.6s var(--an-ease)}
+.an-js [data-anim].an-in .an-zoom{transform:none}
+
+/* 4. LINIA, KTÓRA „ROŚNIE” POD NAGŁÓWKIEM
+   Dodaj klasę an-line do nagłówka (np. <h2 class="an-line">). */
+.an-line:after{content:"";display:block;height:3px;width:56px;border-radius:3px;
+  background:linear-gradient(90deg,var(--an-c1),var(--an-c2));margin-top:20px}
+.an-line.an-center:after{margin-left:auto;margin-right:auto}
+.an-js .an-line[data-anim]:after{width:0;transition:width .9s .45s var(--an-ease)}
+.an-js .an-line[data-anim].an-in:after{width:56px}
+
+/* 5. KARTA: UNIESIENIE + PRZELATUJĄCY ODBLASK PO NAJECHANIU
+   Dodaj klasę an-card do karty. */
+.an-card{position:relative;overflow:hidden;transition:transform .5s var(--an-ease),box-shadow .5s var(--an-ease)}
+.an-card:before{content:"";position:absolute;inset:0;pointer-events:none;z-index:3;
+  background:linear-gradient(118deg,transparent 26%,rgba(255,255,255,.55) 44%,transparent 58%);
+  transform:translateX(-120%);transition:transform 1.1s var(--an-ease)}
+.an-card:hover:before{transform:translateX(120%)}
+.an-card:hover,.an-js .an-card.an-in:hover{transform:translateY(-6px);box-shadow:0 34px 70px -34px rgba(23,21,59,.38)}
+
+/* 6. ZDJĘCIE Z ŁUKIEM U GÓRY (galeria) */
+.an-arch{overflow:hidden;border-radius:999px 999px 22px 22px;box-shadow:0 26px 54px -28px rgba(23,21,59,.45)}
+.an-arch img{display:block;width:100%;aspect-ratio:3/4;object-fit:cover;transition:transform .9s var(--an-ease)}
+.an-arch:hover img{transform:scale(1.05)}
+
+/* 7. PASEK POSTĘPU PRZEWIJANIA (tworzony automatycznie przez skrypt) */
+#an-prog{position:fixed;top:0;left:0;height:3px;width:0;z-index:9999;pointer-events:none;
+  background:linear-gradient(90deg,var(--an-c1),var(--an-c2));transition:width .12s linear}
+
+/* 8. PASEK HASEŁ (marquee) – treść wpisz dwa razy, żeby pętla była płynna */
+.an-mq{overflow:hidden;padding:18px 0;background:var(--an-dark)}
+.an-mq-track{display:flex;align-items:center;gap:34px;width:max-content;animation:an-mq 42s linear infinite;
+  color:#fff;font-weight:800;font-size:14px;letter-spacing:.22em;text-transform:uppercase}
+.an-mq-track b{font-weight:800;white-space:nowrap}
+.an-mq-track i{display:block;width:8px;height:8px;border-radius:50%;background:var(--an-c2);flex:0 0 8px}
+@keyframes an-mq{to{transform:translateX(-50%)}}
+
+/* 9. PAS ZE ZDJĘCIEM I CYTATEM (paralaksa) */
+.an-band{position:relative;overflow:hidden;isolation:isolate;min-height:clamp(380px,48vw,580px);
+  display:flex;align-items:center;justify-content:center;text-align:center;padding:80px 20px}
+.an-band-bg{position:absolute;left:0;top:-12%;width:100%;height:124%;object-fit:cover;z-index:-2;will-change:transform}
+.an-band:before{content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(180deg,rgba(23,21,59,.66),rgba(23,21,59,.5) 45%,rgba(23,21,59,.78))}
+.an-band h2{color:#fff;text-shadow:0 2px 30px rgba(0,0,0,.35)}
+
+/* 10. OSOBY Z WYŁĄCZONYMI ANIMACJAMI W TELEFONIE – wszystko widać od razu */
+@media (prefers-reduced-motion:reduce){
+  .an-js [data-anim]{opacity:1!important;transform:none!important;filter:none!important;clip-path:none!important;transition:none!important}
+  .an-js [data-anim] .an-zoom{transform:none!important}
+  .an-js .an-line[data-anim]:after{width:56px}
+  .an-mq-track{animation:none}
+}

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dziękuję | Zadbany Pazurek</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#F7FBFE">
+<link rel="icon" type="image/png" sizes="32x32" href="ikony/icon-32.png">
+<link rel="apple-touch-icon" href="ikony/icon-180.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&display=swap">
+<style>
+  /* Ten sam ciemny wygląd co strona główna: biel, błękitne akcenty, neonowy przycisk. */
+  :root{
+    --bg:#F7FBFE; --card:#FFFFFF; --line:#CFE4F2; --ink:#0E2A44; --muted:#4B6178; --dim:#7F91A3;
+    --orange:#0E92D6; --orange-dark:#0A74AE; --orange-soft:rgba(14,146,214,.12);
+    --display:"Barlow Condensed","Arial Narrow",system-ui,sans-serif;
+    --text:"Barlow",-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+    color-scheme:light;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:radial-gradient(900px 500px at 50% -10%,#DFF1FC 0%,transparent 60%),var(--bg);color:var(--ink);font:17px/1.6 var(--text);-webkit-font-smoothing:antialiased;min-height:100vh}
+  a{color:var(--orange)}
+  .wrap{max-width:720px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px));padding-block:24px 64px}
+  .top{display:flex;justify-content:center;padding-bottom:40px}
+  .logo{display:flex;align-items:flex-end;gap:10px;text-decoration:none}
+  .logo-ic{height:46px;width:auto}.logo-txt{height:26px;width:auto;margin-bottom:6px}
+  @media(max-width:480px){.logo{gap:6px}.logo-ic{height:34px}.logo-txt{height:16px;margin-bottom:4px}}
+  .hero{text-align:center}
+  .check{width:84px;height:84px;margin:0 auto 22px;border-radius:50%;display:grid;place-items:center;background:var(--orange);box-shadow:0 0 0 8px var(--orange-soft),0 0 40px rgba(14,146,214,.6)}
+  .check svg{width:42px;height:42px;stroke:#FFFFFF;stroke-width:3.4;fill:none;stroke-linecap:round;stroke-linejoin:round}
+  h1,h2,h3{font-family:var(--display);text-transform:uppercase;line-height:1.02;margin:0 0 14px;text-wrap:balance}
+  h1{font-size:clamp(44px,9vw,76px);font-weight:800}
+  h1 em,h2 em{font-style:normal;color:var(--orange)}
+  h2{font-size:clamp(28px,5vw,40px);font-weight:800}
+  h3{font-size:22px;font-weight:700;margin-bottom:4px}
+  .slogan{font:700 clamp(20px,3vw,26px)/1.2 var(--display);text-transform:uppercase;letter-spacing:.02em;color:var(--muted)}
+  .slogan em{font-style:normal;color:var(--orange)}
+  .mail{margin:30px 0 0;background:var(--card);border:1px solid var(--line);border-left:4px solid var(--orange);border-radius:10px;padding:18px 20px;text-align:left}
+  .mail b{color:var(--ink)}
+  .mail p{margin:0;color:var(--muted)}
+  .steps{list-style:none;margin:40px 0 0;padding:0;display:grid;gap:12px}
+  .steps li{display:grid;grid-template-columns:52px 1fr;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
+  .steps .n{font:800 40px/1 var(--display);color:var(--orange)}
+  .steps p{margin:0 0 12px;color:var(--muted)}
+  .steps p:last-child{margin:0}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;color:#FFFFFF;font:700 18px var(--display);letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border-radius:4px;padding:14px 22px;cursor:pointer;background:linear-gradient(180deg,#7CCBF2 0%,var(--orange) 55%,#0A74AE 100%);border:1px solid #7CCBF2;box-shadow:0 0 0 1px rgba(14,146,214,.55),0 0 12px rgba(14,146,214,.75),0 0 32px rgba(14,146,214,.45),inset 0 0 12px rgba(14,146,214,.55);animation:none;--x: 2.6s ease-in-out infinite}
+  .btn:hover{animation:none;box-shadow:0 0 0 1px rgba(14,146,214,.8),0 0 16px rgba(14,146,214,.95),0 0 44px rgba(14,146,214,.7),inset 0 0 14px rgba(14,146,214,.7)}
+  .btn.line{background:transparent;color:var(--ink);border:1.5px solid #CFE4F2;box-shadow:none;animation:none}
+  .btn.line:hover{border-color:var(--ink)}
+  @keyframes neon{0%,100%{box-shadow:0 0 0 1px rgba(14,146,214,.55),0 0 12px rgba(14,146,214,.75),0 0 32px rgba(14,146,214,.45),inset 0 0 12px rgba(14,146,214,.55)}50%{box-shadow:0 0 0 1px rgba(14,146,214,.7),0 0 18px rgba(14,146,214,.9),0 0 46px rgba(14,146,214,.6),inset 0 0 14px rgba(14,146,214,.65)}}
+  :focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+  .os{display:inline-grid;grid-template-columns:1fr 1fr;gap:4px;background:#FFFFFF;border:1px solid var(--line);border-radius:8px;padding:4px;margin:4px 0 16px}
+  .os button{font:700 15px var(--display);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);background:transparent;border:0;border-radius:5px;padding:9px 12px;cursor:pointer}
+  .os button[aria-selected="true"]{background:var(--orange);color:#FFFFFF;box-shadow:0 0 12px rgba(14,146,214,.6)}
+  .howto{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+  .howto[hidden]{display:none}
+  .howto figure{margin:0;display:flex;flex-direction:column;gap:8px}
+  .howto img{width:100%;max-width:100%;height:auto;display:block}
+  .howto figcaption{font-size:13px;line-height:1.4;color:var(--muted)}
+  .howto figcaption b{color:var(--ink)}
+  .swipe{display:none}
+  @media(max-width:560px){.swipe{display:block}}
+  .tip{font-size:14px;color:var(--dim);margin:14px 0 0!important}
+  @media(max-width:560px){.steps li{grid-template-columns:1fr;gap:6px}.howto{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;padding-bottom:8px;margin-right:-20px;padding-right:20px}.howto figure{flex:0 0 68%;scroll-snap-align:start}.howto figcaption{font-size:14px}}
+  .steps li>div{min-width:0}
+  .help{margin-top:40px;text-align:center;color:var(--muted)}
+  footer{margin-top:48px;padding-top:24px;border-top:1px solid #CFE4F2;text-align:center;font-size:14px;color:var(--dim)}
+  footer p{margin:0 0 6px}
+  @media(prefers-reduced-motion:reduce){.btn{animation:none}}
+  .hidden{display:none!important}
+</style>
+<style>.logo-txt,.logo-ic{filter:brightness(0) opacity(.85)}</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <a class="logo" href="index.html" aria-label="Zadbany Pazurek – strona główna"><img class="logo-txt" src="logo/napis-zadbany.png" alt="Zadbany"><img class="logo-ic" src="logo/pazurek-ikona.png" alt=""><img class="logo-txt" src="logo/napis-pazurek.png" alt="Pazurek"></a>
+  </div>
+
+  <section class="hero">
+    <div class="check" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+    <h1 id="hello">Dziękuję!</h1>
+    <p class="slogan">Jesteś w programie.<br><em>Zmiana jest w Twoich rękach.</em></p>
+    <div class="mail" id="mailBox">
+      <p id="mailTxt"><b>Sprawdź skrzynkę mailową.</b> Wysyłam Ci link do aplikacji i wszystkie informacje. Jeśli nie widzisz maila, zajrzyj do folderu Oferty albo Spam.</p>
+    </div>
+  </section>
+
+  <section>
+    <ol class="steps">
+      <li><span class="n">1</span><div>
+        <h3>Otwórz aplikację</h3>
+        <p>Zaloguj się adresem e-mail, który podałeś. Bez hasła: na maila przyjdzie kod, który wpisujesz w aplikacji.</p>
+        <p><a class="btn" id="appBtn" href="#" target="_blank" rel="noopener">Otwieram aplikację</a></p>
+      </div></li>
+      <li><span class="n">2</span><div>
+        <h3>Dodaj ją do ekranu telefonu</h3>
+        <p>Wtedy otwierasz ją jednym dotknięciem, jak zwykłą aplikację. Wybierz swój telefon:</p>
+        <div class="os" role="tablist" aria-label="Twój telefon">
+          <button type="button" role="tab" id="tabAndroid" aria-selected="true" data-os="android">Android · Chrome</button>
+          <button type="button" role="tab" id="tabIphone" aria-selected="false" data-os="iphone">iPhone · Safari</button>
+        </div>
+        <div class="howto" id="howAndroid">
+          <figure><img src="instrukcja/android-1.svg" alt="Chrome: przycisk z trzema kropkami w prawym górnym rogu"><figcaption><b>1.</b> Dotknij <b>⋮</b> w prawym górnym rogu</figcaption></figure>
+          <figure><img src="instrukcja/android-2.svg" alt="Menu Chrome z zaznaczoną opcją Zainstaluj aplikację"><figcaption><b>2.</b> Wybierz <b>„Zainstaluj aplikację”</b> albo „Dodaj do ekranu głównego”</figcaption></figure>
+          <figure><img src="instrukcja/android-3.svg" alt="Okno z przyciskiem Zainstaluj"><figcaption><b>3.</b> Potwierdź <b>„Zainstaluj”</b></figcaption></figure>
+        </div>
+        <div class="howto" id="howIphone" hidden>
+          <figure><img src="instrukcja/iphone-1.svg" alt="Safari: przycisk z trzema kropkami obok paska adresu i menu z opcją Udostępnij"><figcaption><b>1.</b> Dotknij <b>···</b> obok paska adresu, potem <b>„Udostępnij”</b></figcaption></figure>
+          <figure><img src="instrukcja/iphone-2.svg" alt="Menu udostępniania z zaznaczoną opcją Do ekranu głównego"><figcaption><b>2.</b> Wybierz <b>„Do ekranu głównego”</b> (jeśli nie widzisz, dotknij „Pokaż więcej”)</figcaption></figure>
+          <figure><img src="instrukcja/iphone-3.svg" alt="Ekran Do ekranu głównego z przyciskiem Dodaj w prawym górnym rogu"><figcaption><b>3.</b> Dotknij <b>„Dodaj”</b> w prawym górnym rogu</figcaption></figure>
+        </div>
+        <p class="tip" id="tipIos" hidden>Masz starszego iPhone'a? Przycisk <b>Udostępnij</b> (kwadrat ze strzałką) jest od razu na dolnym pasku Safari.</p>
+        <p class="tip swipe">Przesuń palcem w bok, żeby zobaczyć kolejne kroki.</p>
+        <p class="tip">Potem otwieraj aplikację z ikony na ekranie telefonu.</p>
+      </div></li>
+      <li><span class="n">3</span><div>
+        <h3>Spotkania na żywo co tydzień</h3>
+        <p>Raz w tygodniu spotykamy się w Google Meet jako grupa wsparcia: rozmowa, omówienie postępów, pytania, a jeśli chcecie, wspólna medytacja. <span id="meet">Termin i link do spotkania znajdziesz w aplikacji, na ekranie „Dziś”.</span> Możesz mieć wyłączoną kamerę.</p>
+      </div></li>
+      <li><span class="n">4</span><div>
+        <h3>Zrób zdjęcie dłoni na start</h3>
+        <p>Obie dłonie od góry, w dziennym świetle. Za 90 dni porównasz je z efektem. Aplikacja poprowadzi Cię krok po kroku.</p>
+      </div></li>
+      <li><span class="n">5</span><div>
+        <h3>Pobierz bonus PDF „Suplementacja i odżywianie”</h3>
+        <p>Jedna strona o tym, co jeść, jakie badania zrobić i kiedy suplementy mają sens. Zapisz go w telefonie albo wydrukuj. Znajdziesz go też w aplikacji, w okienku Higiena.</p>
+        <p><a class="btn line" href="pdf/suplementacja-i-odzywianie.pdf" target="_blank" rel="noopener">Pobieram przewodnik PDF</a></p>
+      </div></li>
+    </ol>
+  </section>
+
+  <p class="help" id="help">Masz pytanie? <a id="ig" href="#" target="_blank" rel="noopener">Napisz do mnie w DM na Instagramie</a>.</p>
+
+  <footer>
+    <p><b style="color:var(--ink)">Zadbany Pazurek</b> · program stworzony przez Tomasza Świadomość</p>
+    <p>Narzędzie wspierające. Nie zastępuje terapii ani porady lekarskiej.</p>
+  </footer>
+</div>
+
+<script src="config.js"></script>
+<script>
+(function(){
+  var C = window.LANDING || {};
+  var name = (new URLSearchParams(location.search).get("imie") || "").trim().slice(0, 40);
+  if (name) document.getElementById("hello").innerHTML = "Dziękuję, <em></em>!";
+  if (name) document.querySelector("#hello em").textContent = name;
+  var app = document.getElementById("appBtn"), ig = document.getElementById("ig");
+  if (C.APP_URL) app.href = C.APP_URL; else app.parentNode.classList.add("hidden");
+  if (C.MEET_INFO) document.getElementById("meet").textContent = C.MEET_INFO;
+  if (C.INSTAGRAM_URL) ig.href = C.INSTAGRAM_URL; else document.getElementById("help").classList.add("hidden");
+
+  // Stan płatności (gdy wracamy z Przelewy24 z parametrem ?s=)
+  var sid = new URLSearchParams(location.search).get("s");
+  if (sid && C.PAY_URL) {
+    var box = document.getElementById("mailTxt"), tries = 0;
+    var h = { "apikey": C.SUPABASE_KEY, "Content-Type": "application/json" };
+    if ((C.SUPABASE_KEY || "").indexOf("eyJ") === 0) h["Authorization"] = "Bearer " + C.SUPABASE_KEY;
+    box.innerHTML = "<b>Sprawdzam płatność…</b> To potrwa kilka sekund.";
+    (function check(){
+      fetch(C.PAY_URL, { method: "POST", headers: h, body: JSON.stringify({ action: "status", s: sid }) })
+        .then(function(r){ return r.json(); })
+        .then(function(d){
+          var st = d && d.status;
+          if (st === "oplacone") { box.innerHTML = "<b>Płatność przyjęta. Sprawdź skrzynkę mailową.</b> Wysłałem Ci link do aplikacji i wszystkie informacje. Jeśli nie widzisz maila, zajrzyj do folderu Oferty albo Spam."; return; }
+          if (st === "nowe" && ++tries < 10) return setTimeout(check, 3000);
+          if (st === "nowe") { box.innerHTML = "<b>Bank jeszcze potwierdza płatność.</b> Gdy to się stanie (zwykle do kilku minut), dostaniesz maila z linkiem do aplikacji. Możesz zamknąć tę stronę."; return; }
+          document.querySelector(".slogan").innerHTML = "Płatność nie doszła do skutku.<br><em>Nic nie zostało pobrane.</em>";
+          document.getElementById("hello").textContent = "Coś poszło nie tak";
+          document.querySelector(".check").classList.add("hidden");
+          [].forEach.call(document.querySelectorAll("section:not(.hero)"), function(x){ x.classList.add("hidden"); });
+          box.innerHTML = "<b>Spróbuj jeszcze raz.</b> <a href=\"index.html#cena\">Wróć do strony i kliknij „Dołączam”</a>. Jeśli pieniądze zeszły z konta, napisz do mnie w DM, sprawdzę to od razu.";
+        })
+        .catch(function(){ if (++tries < 10) setTimeout(check, 3000); });
+    })();
+  }
+
+  // Instrukcja dodania do ekranu: zakładki Android / iPhone
+  var isIOS = /iPhone|iPad|iPod/.test(navigator.userAgent);
+  function showOS(os){
+    ["android","iphone"].forEach(function(k){
+      var t = document.querySelector('[data-os="' + k + '"]');
+      t.setAttribute("aria-selected", k === os ? "true" : "false");
+      document.getElementById(k === "android" ? "howAndroid" : "howIphone").hidden = k !== os;
+    });
+    document.getElementById("tipIos").hidden = os !== "iphone";
+  }
+  [].forEach.call(document.querySelectorAll(".os button"), function(b){ b.addEventListener("click", function(){ showOS(b.dataset.os); }); });
+  showOS(isIOS ? "iphone" : "android");
+})();
+</script>
+</body>
+</html>
