@@ -40,11 +40,11 @@ window.LANDING = {
   PAY_URL: "",
 
   // Strona z podziękowaniem (dziekuje.html)
-  APP_URL: "https://zadbany-pazurek-app.vercel.app", // adres aplikacji
+  APP_URL: "https://app.pazurek.tomaszswiadomosc.pl", // adres aplikacji
   MEET_INFO: "W każdą niedzielę o 20:00 czasu polskiego. Link do spotkania znajdziesz w aplikacji.", // opcjonalnie własny tekst o terminie spotkań (puste = „termin i link w aplikacji”)
 
   // Linki
-  PRIVACY_URL: "https://zadbany-pazurek-app.vercel.app/prywatnosc.html",
-  TERMS_URL: "https://zadbany-pazurek-app.vercel.app/regulamin.html",
+  PRIVACY_URL: "https://app.pazurek.tomaszswiadomosc.pl/prywatnosc.html",
+  TERMS_URL: "https://app.pazurek.tomaszswiadomosc.pl/regulamin.html",
   INSTAGRAM_URL: "https://www.instagram.com/"
 };
