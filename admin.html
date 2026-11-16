@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Panel trenera · Zadbany Pazurek</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="style.css?v=25">
+</head>
+<body>
+<div class="app wide">
+  <section id="a-login" class="stack" hidden style="max-width:440px">
+    <h1>Panel trenera</h1>
+    <form class="card" id="aLogin">
+      <label class="label" for="aEmail">E-mail trenera</label>
+      <input type="email" id="aEmail" required autocomplete="email">
+      <button class="btn" type="submit">Wyślij link do logowania</button>
+    </form>
+    <div class="note" id="aSent" hidden>Sprawdź skrzynkę i kliknij link.</div>
+  </section>
+
+  <section id="a-denied" class="stack" hidden style="max-width:440px">
+    <h1>Brak dostępu</h1>
+    <p class="muted">To konto nie ma uprawnień trenera. Instrukcja nadania uprawnień jest w pliku WDROZENIE.md, krok 7.</p>
+    <button class="btn ghost" id="aOut1">Wyloguj</button>
+  </section>
+
+  <section id="a-main" class="stack" hidden>
+    <div class="top"><div><div class="label">Zadbany Pazurek · Program 90 dni</div><h1>Panel trenera</h1></div>
+      <div class="row" style="flex:none"><select id="range" class="chip" aria-label="Zakres czasu"><option value="7">Ostatnie 7 dni</option><option value="30">Ostatnie 30 dni</option><option value="90">Ostatnie 90 dni</option></select>
+      <button class="btn ghost" id="aOut2" style="flex:none">Wyloguj</button></div></div>
+
+    <div class="stats four">
+      <div class="stat card"><b id="kUsers">0</b><span class="small muted">uczestników</span></div>
+      <div class="stat card"><b id="kActive">0</b><span class="small muted">aktywnych w zakresie</span></div>
+      <div class="stat card"><b id="kBit">0</b><span class="small muted">obgryzień</span></div>
+      <div class="stat card"><b id="kRes">0</b><span class="small muted">powstrzymań</span></div>
+      <div class="stat card"><b id="kAware">0%</b><span class="small muted">zauważonych przed / w trakcie</span></div>
+      <div class="stat card"><b id="kDrill">0</b><span class="small muted">ćwiczeń na sucho na osobę</span></div>
+      <div class="stat card"><b id="kHyg">0</b><span class="small muted">dni z higieną paznokci na osobę</span></div>
+    </div>
+
+    <div class="card"><div class="label">Strona sprzedażowa · w wybranym zakresie</div>
+      <div class="stats four">
+        <div class="stat"><b id="lVisit">0</b><span class="small muted">wejść</span></div>
+        <div class="stat"><b id="lJoin">0</b><span class="small muted">kliknięć „Dołączam”</span></div>
+        <div class="stat"><b id="lSign">0</b><span class="small muted">zapisów</span></div>
+        <div class="stat"><b id="lConv">–</b><span class="small muted">wejść kończy się zapisem</span></div>
+      </div>
+      <p class="small muted" id="lSrc"></p>
+      <p class="small muted">Liczone raz na wizytę, bez ciasteczek i bez adresu IP. Źródło: link z dopiskiem <b>?z=instagram</b> albo <b>?z=tiktok</b>, inaczej strona, z której ktoś przyszedł.</p></div>
+
+    <div class="card"><div class="label">Wyniki ankiet (start → ostatnia odpowiedź, wszystkie osoby z co najmniej 2 ankietami)</div>
+      <div class="stats four">
+        <div class="stat"><b id="sN">0</b><span class="small muted">osób z wynikiem</span></div>
+        <div class="stat"><b id="sImp">–</b><span class="small muted">z poprawą</span></div>
+        <div class="stat"><b id="sUrge">–</b><span class="small muted">średnia zmiana chęci (0–10)</span></div>
+        <div class="stat"><b id="sShame">–</b><span class="small muted">średnia zmiana wstydu (0–10)</span></div>
+        <div class="stat"><b id="sFreq">–</b><span class="small muted">mniej obgryzania dziennie</span></div>
+      </div>
+      <p class="small muted">„Z poprawą” = mniejsza częstość obgryzania albo chęć niższa o co najmniej 2 punkty. To dane do case study na landing: „X z Y osób…”.</p></div>
+
+    <div class="card"><div class="label">Wnioski na najbliższe spotkanie</div><p id="summary"></p></div>
+
+    <form class="card stack" id="meetForm" style="gap:10px">
+      <div class="label">Spotkania na żywo (Google Meet) · widzą je uczestnicy w aplikacji</div>
+      <div class="grid2">
+        <div><label class="label" for="mDay">Dzień tygodnia</label>
+          <select id="mDay"><option value="">— brak spotkań —</option><option value="1">Poniedziałek</option><option value="2">Wtorek</option><option value="3">Środa</option><option value="4">Czwartek</option><option value="5">Piątek</option><option value="6">Sobota</option><option value="7">Niedziela</option></select></div>
+        <div><label class="label" for="mTime">Godzina (czas polski)</label><input type="time" id="mTime"></div>
+        <div><label class="label" for="mDur">Ile trwa (minuty)</label><input type="number" id="mDur" min="15" max="240" step="5" value="60"></div>
+        <div><label class="label" for="mOff">Odwołaj spotkanie w dniu (opcjonalnie)</label><input type="date" id="mOff"></div>
+      </div>
+      <label class="label" for="mLink">Link do Google Meet (stały link spotkania cyklicznego)</label>
+      <input type="url" id="mLink" placeholder="https://meet.google.com/abc-defg-hij">
+      <label class="label" for="mTopic">Temat najbliższego spotkania (opcjonalnie)</label>
+      <input type="text" id="mTopic" maxlength="200" placeholder="np. Wieczorne obgryzanie przy serialu">
+      <button class="btn" type="submit" id="mSave">Zapisz spotkanie</button>
+      <p class="small muted">Aplikacja sama pokazuje najbliższy termin, a w trakcie spotkania napis „Trwa teraz”. Jeśli wybierzesz „brak spotkań”, karta zniknie z aplikacji.</p>
+    </form>
+
+    <div class="grid2">
+      <div class="card"><div class="label">Emocje przed obgryzieniem</div><div class="stack" id="gEmo" style="gap:8px"></div></div>
+      <div class="card"><div class="label">Miejsca</div><div class="stack" id="gPlace" style="gap:8px"></div></div>
+      <div class="card"><div class="label">Pora dnia</div><div class="stack" id="gTime" style="gap:8px"></div></div>
+      <div class="card"><div class="label">Co pomaga przy powstrzymaniu</div><div class="stack" id="gHelp" style="gap:8px"></div></div>
+    </div>
+
+    <div class="card"><div class="label">Uczestnicy</div>
+      <div class="tablewrap"><table>
+        <thead><tr><th>Imię i nazwisko</th><th>Dzień</th><th>Ostatni zapis</th><th>Obgryzienia</th><th>Powstrzymania</th><th>Świadomość</th><th>Ćwiczenia</th><th>Higiena</th><th>Chęć start → teraz</th><th>Plan</th><th>Wsparcie</th><th>Zadania</th><th>Case study</th></tr></thead>
+        <tbody id="tbl"></tbody></table></div>
+      <p class="small muted">Liczby w tabeli dotyczą wybranego zakresu czasu. „Zadania” to odhaczone dni w całym programie. „Higiena” to dni, w których ktoś odhaczył pielęgnację, i średnio ile z 3 rzeczy zrobił.</p></div>
+
+    <div class="card stack" id="leadCard" style="gap:10px"><div class="label">Zgłoszenia ze strony · osoby, które kliknęły „Dołączam”</div>
+      <p class="small muted" id="leadInfo">Wczytuję…</p>
+      <div class="row" style="gap:8px;flex-wrap:wrap" id="leadFilter">
+        <button class="btn slim" data-lf="aktywne">Do obsłużenia</button>
+        <button class="btn ghost slim" data-lf="wszystkie">Wszystkie</button>
+      </div>
+      <div class="stack" id="leadList" style="gap:10px"></div>
+    </div>
+
+    <div class="card stack" id="accCard" style="gap:10px"><div class="label">Lista dostępu · kto może zalogować się do aplikacji</div>
+      <p class="small muted" id="accInfo">Osoby, które zapłaciły w Przelewy24, trafiają tu same. Możesz też dodać kogoś ręcznie (tester, prezent) albo odebrać dostęp po zwrocie pieniędzy.</p>
+      <form class="row" id="accForm" style="gap:8px;flex-wrap:wrap">
+        <input type="email" id="accEmail" placeholder="e-mail" required style="flex:2;min-width:200px">
+        <input type="text" id="accName" placeholder="imię (opcjonalnie)" style="flex:1;min-width:140px">
+        <button class="btn" id="accAdd" style="flex:none">Dodaj dostęp</button>
+      </form>
+      <input type="search" id="accFind" placeholder="Szukaj po e-mailu lub imieniu">
+      <div class="tablewrap"><table>
+        <thead><tr><th>E-mail</th><th>Imię</th><th>Skąd</th><th>Od</th><th>Status</th><th></th></tr></thead>
+        <tbody id="accTbl"></tbody></table></div>
+    </div>
+
+    <div class="card"><div class="label">Case study przed / po (tylko osoby ze zgodą)</div><div class="grid2" id="cases"></div></div>
+  </section>
+</div>
+<div class="toast" id="toast" hidden></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="config.js?v=25"></script>
+<script src="plan.js?v=25"></script>
+<script src="admin.js?v=25"></script>
+</body>
+</html>
