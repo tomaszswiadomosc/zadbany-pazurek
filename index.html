@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Zadbany Pazurek | Przestań obgryzać paznokcie</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="Przestań obgryzać paznokcie w 90 dni. Bez silnej woli, z planem w telefonie: aplikacja, codzienne ćwiczenia i spotkania na żywo. 42 zł, 14 dni gwarancji zwrotu.">
+<meta name="description" content="Przestań obgryzać paznokcie w 90 dni. Bez silnej woli, z planem w telefonie: aplikacja, codzienne ćwiczenia i spotkania na żywo. 57 zł, 14 dni gwarancji zwrotu.">
 <meta property="og:title" content="Zadbany Pazurek | Przestań obgryzać paznokcie">
 <meta property="og:description" content="Przestań obgryzać paznokcie w 90 dni. Bez silnej woli, z planem w telefonie. Program Tomasza Świadomość.">
 <meta property="og:type" content="website">
@@ -289,7 +289,7 @@
   .form-box{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:30px 22px;max-width:640px;margin:32px auto 0}
   label{display:block;font-weight:600;font-size:15px;margin:0 0 6px}
   .opt{font-weight:400;color:var(--dim)}
-  input[type=text],input[type=email],select,textarea{width:100%;font:inherit;font-size:16px;color:var(--ink);background:#FFFFFF;border:1.5px solid var(--line);border-radius:6px;padding:13px 14px;margin-bottom:16px;outline:none;transition:border .15s}
+  input[type=text],input[type=email],input[type=tel],select,textarea{width:100%;font:inherit;font-size:16px;color:var(--ink);background:#FFFFFF;border:1.5px solid var(--line);border-radius:6px;padding:13px 14px;margin-bottom:16px;outline:none;transition:border .15s}
   input::placeholder,textarea::placeholder{color:#7F91A3}
   input:focus,select:focus,textarea:focus{border-color:var(--orange)}
   textarea{min-height:90px;resize:vertical}
@@ -352,6 +352,21 @@
   .bonus-tile p{color:var(--muted);font-size:18px;margin:0}
   .guarantee{display:flex;gap:10px;align-items:flex-start;text-align:left;margin-top:16px;padding:12px 14px;border-radius:10px;background:#EAF5FC;color:var(--ink);font-size:14px;line-height:1.45}
   .guarantee svg{width:26px;height:26px;flex:none;color:var(--orange)}
+  .pdf-offer{margin-top:26px;display:grid;gap:22px;align-items:center;background:var(--card);border:1.5px dashed #9CCBEA;border-radius:var(--r);padding:22px}
+  @media(min-width:760px){.pdf-offer{grid-template-columns:150px 1fr;padding:26px 30px}}
+  .pdf-offer img{width:150px;max-width:100%;border-radius:6px;box-shadow:0 10px 26px rgba(14,42,68,.18);justify-self:center}
+  .pdf-offer h3{font:800 clamp(22px,3vw,28px)/1.1 var(--display);text-transform:uppercase;margin:6px 0 8px}
+  .pdf-offer h3 em{font-style:normal;color:var(--orange)}
+  .pdf-offer p{color:var(--muted);margin:0}
+  .pdf-row{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin:14px 0 8px}
+  .pdf-offer .btn.line{color:var(--orange);border:2px solid var(--orange)}
+  .pdf-offer .btn.line:hover{background:#EAF5FC;border-color:var(--orange)}
+  .pdf-price{font:800 44px/1 var(--display);color:var(--ink)}
+  .offer-pick{display:grid;gap:8px;margin:4px 0 12px}
+  .offer-pick label{display:flex;gap:10px;align-items:center;border:1.5px solid var(--line,#CFE4F2);border-radius:10px;padding:12px 14px;cursor:pointer;font-weight:600;margin:0}
+  .offer-pick label:has(input:checked){border-color:var(--orange);background:#EAF5FC}
+  .offer-pick input{width:auto;margin:0;accent-color:#0E92D6}
+  .offer-pick small{display:block;font-weight:400;color:var(--muted)}
   .join-cta{margin:26px auto 0;display:flex;flex-direction:column;align-items:center;gap:10px}
   .join-cta .btn{min-width:min(100%,320px)}
   .about-stat{display:flex;gap:14px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 18px;margin:4px 0 16px}
@@ -381,7 +396,7 @@
         <p class="slogan">Bez silnej woli.<br><em>Z planem w telefonie.</em></p>
         <p class="sub">Obgryzanie to nawyk, który da się przeprogramować.<br>Aplikacja, codzienne ćwiczenia i spotkania na żywo w każdą niedzielę prowadzą Cię krok po kroku.</p>
         <div class="cta-row">
-          <a class="btn" href="#zapis">Dołączam za 42 zł</a>
+          <a class="btn" href="#zapis">Dołączam za 57 zł</a>
         </div>
         <p class="fine"><b>14 dni gwarancji zwrotu.</b> Bez App Store, działa na każdym telefonie.</p>
       </div>
@@ -554,7 +569,7 @@
     <div class="offer">
       <div>
         <span class="eyebrow o">Co dostajesz</span>
-        <h2>Pełny program <em>za 42 zł</em></h2>
+        <h2>Pełny program <em>za 57 zł</em></h2>
         <ul class="check">
           <li><b>Aplikacja Zadbany Pazurek:</b> plan na 12 tygodni, ćwiczenia dnia, dziennik, SOS i śledzenie postępu</li>
           <li><b>Codzienna higiena paznokci:</b> co robić, czego używać i jak pielęgnować odrastające paznokcie. Proste instrukcje z grafikami i odhaczanie w aplikacji</li>
@@ -565,10 +580,20 @@
       </div>
       <div class="price">
         <div class="kicker">Program 90 dni</div>
-        <div class="tag">42 zł</div>
+        <div class="tag">57 zł</div>
         <p>Płacisz raz, bez abonamentu.</p>
-        <a class="btn" href="#zapis">Dołączam za 42 zł</a>
-        <div class="guarantee"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l8 3v6c0 5-3.5 9.3-8 11-4.5-1.7-8-6-8-11V5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M8.5 12l2.5 2.5 4.5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>14 dni gwarancji zwrotu.</b> Jeśli w ciągu 14 dni uznasz, że program nie jest dla Ciebie, napisz do mnie, a oddam Ci 42 zł.</span></div>
+        <a class="btn" href="#zapis">Dołączam za 57 zł</a>
+        <div class="guarantee"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l8 3v6c0 5-3.5 9.3-8 11-4.5-1.7-8-6-8-11V5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M8.5 12l2.5 2.5 4.5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>14 dni gwarancji zwrotu.</b> Jeśli w ciągu 14 dni uznasz, że program nie jest dla Ciebie, napisz do mnie, a zwrócę Ci pieniądze.</span></div>
+      </div>
+    </div>
+    <div class="pdf-offer">
+      <img src="zdjecia/przewodnik-okladka.jpg" alt="Okładka przewodnika Dlaczego obgryzasz paznokcie?" loading="lazy">
+      <div>
+        <span class="eyebrow o">Nie jesteś jeszcze gotowy na program?</span>
+        <h3>Zacznij od przewodnika PDF <em>„Dlaczego obgryzasz paznokcie?”</em></h3>
+        <p>Skąd bierze się nawyk, pięć jego źródeł, test Twoich wyzwalaczy i pierwsze ćwiczenie na dziś. Krótko i na podstawie badań.</p>
+        <div class="pdf-row"><span class="pdf-price">27 zł</span><a class="btn line" href="#zapis" data-oferta="przewodnik">Chcę przewodnik</a></div>
+        <p class="fine">Jeśli później dołączysz do programu, odliczę Ci te 27 zł.</p>
       </div>
     </div>
   </div>
@@ -588,11 +613,15 @@
     <div class="center">
       <h2>Weź to w <em>swoje ręce</em></h2>
       <p class="lead">Jeśli zmagasz się z tym nawykiem, dobrze trafiłeś.<br>Ćwiczenia w programie opierają się na badaniach. Działają, kiedy je regularnie robisz.</p>
-      <div class="join-cta" id="joinCta"><a class="btn" href="#zapis">Dołączam za 42 zł</a><p class="fine"><b>14 dni gwarancji zwrotu.</b> Płacisz raz, bez abonamentu.</p></div>
+      <div class="join-cta" id="joinCta"><a class="btn" href="#zapis">Dołączam za 57 zł</a><p class="fine"><b>14 dni gwarancji zwrotu.</b> Płacisz raz, bez abonamentu.</p></div>
       </div>
     </div>
     <div class="form-box hidden" id="formBox">
       <form id="form" novalidate>
+        <div class="offer-pick" role="radiogroup" aria-label="Wybierz ofertę">
+          <label><input type="radio" name="oferta" value="program" checked> <span>Program 90 dni, 57 zł<small>Aplikacja, plan na każdy dzień, spotkania na żywo</small></span></label>
+          <label><input type="radio" name="oferta" value="przewodnik"> <span>Przewodnik PDF, 27 zł<small>„Dlaczego obgryzasz paznokcie?”, wysyłam mailem</small></span></label>
+        </div>
         <label for="imie">Imię</label>
         <input type="text" id="imie" name="imie" autocomplete="given-name" maxlength="80" required>
 
@@ -623,14 +652,14 @@
         <label class="tick hidden" id="regBox"><input type="checkbox" id="regulamin"> <span>Akceptuję <a id="terms2" href="#" target="_blank" rel="noopener">regulamin</a> i chcę dostać dostęp do programu od razu po płatności. Wiem, że mam 14 dni na zwrot pieniędzy, jeśli program nie jest dla mnie.</span></label>
         <label class="tick"><input type="checkbox" id="zgoda" required> <span>Zgadzam się na przetwarzanie podanych danych, w tym informacji o moim nawyku, w celu zapisu do programu Zadbany Pazurek. Administratorem jest Golden Teacher Tomasz Grzybowski (Tomasz Świadomość). Mogę wycofać zgodę w każdej chwili. Szczegóły w <a id="privacy" href="#" target="_blank" rel="noopener">polityce prywatności</a>.</span></label>
 
-        <p class="fine" id="talkNote" style="margin:4px 0 0">Po wysłaniu zgłoszenia odezwę się do Ciebie osobiście, zwykle w ciągu 24 godzin. Porozmawiamy chwilę, a płatność 42 zł (BLIK lub przelew) ustalimy dopiero wtedy. Dostęp do aplikacji dostaniesz zaraz po płatności.</p>
-        <button class="btn" type="submit" id="send" style="width:100%;margin-top:6px">Dołączam za 42 zł</button>
+        <p class="fine" id="talkNote" style="margin:4px 0 0">Po wysłaniu zgłoszenia odezwę się do Ciebie osobiście, zwykle w ciągu 24 godzin. Porozmawiamy chwilę, a płatność <span id="talkPrice">57 zł</span> (BLIK lub przelew) ustalimy dopiero wtedy. <span id="talkWhat">Dostęp do aplikacji dostaniesz zaraz po płatności.</span></p>
+        <button class="btn" type="submit" id="send" style="width:100%;margin-top:6px">Dołączam za 57 zł</button>
         <div class="msg" id="msg" role="alert"></div>
       </form>
       <div class="done hidden" id="done">
         <div class="big">Gotowe</div>
         <h3 id="doneTitle">Dzięki! Jesteś na liście.</h3>
-        <p>Odezwę się do Ciebie osobiście, zwykle w ciągu 24 godzin: telefonicznie, w DM albo mailem. Jeśli piszę mailem, zajrzyj też do folderu Oferty lub Spam.</p>
+        <p id="doneText">Odezwę się do Ciebie osobiście, zwykle w ciągu 24 godzin: telefonicznie, w DM albo mailem. Jeśli piszę mailem, zajrzyj też do folderu Oferty lub Spam.</p>
       </div>
     </div>
   </div>
@@ -667,8 +696,8 @@
       <details><summary>Co z moimi danymi i zdjęciami?</summary><p>Dane są przechowywane na serwerach w Unii Europejskiej (Frankfurt). Zdjęć Twoich dłoni nie publikuję bez Twojej osobnej zgody.</p></details>
       <details><summary>Kiedy są spotkania na żywo?</summary><p>W każdą niedzielę o 20:00 czasu polskiego, w Google Meet. Link znajdziesz w aplikacji. Udział jest dobrowolny, możesz też tylko słuchać.</p></details>
       <details><summary>Co, jeśli znowu zacznę obgryzać?</summary><p>To normalna część zmiany nawyku. Zapisujesz taki moment w aplikacji jako informację, nie porażkę. Z czasem widzisz, kiedy i dlaczego to się dzieje, a plan „jeśli… to…” i SOS pomagają w trudnych chwilach.</p></details>
-      <details><summary>Ile to kosztuje?</summary><p>42 zł jednorazowo, bez abonamentu.</p></details>
-      <details><summary>A jeśli program nie jest dla mnie?</summary><p>Masz 14 dni gwarancji zwrotu. Jeśli w tym czasie uznasz, że to nie dla Ciebie, napisz do mnie, a oddam Ci 42 zł.</p></details>
+      <details><summary>Ile to kosztuje?</summary><p>Program 90 dni kosztuje 57 zł jednorazowo, bez abonamentu. Sam przewodnik PDF „Dlaczego obgryzasz paznokcie?” kosztuje 27 zł. Jeśli najpierw kupisz przewodnik, a potem dołączysz do programu, odliczę Ci te 27 zł.</p></details>
+      <details><summary>A jeśli program nie jest dla mnie?</summary><p>Masz 14 dni gwarancji zwrotu. Jeśli w tym czasie uznasz, że to nie dla Ciebie, napisz do mnie, a zwrócę Ci pieniądze.</p></details>
     </div>
   </div>
 </section>
@@ -726,7 +755,7 @@
   </div>
 </footer>
 
-<div class="sticky" id="sticky"><a class="btn" href="#zapis">Dołączam za 42 zł</a></div>
+<div class="sticky" id="sticky"><a class="btn" href="#zapis">Dołączam za 57 zł</a></div>
 
 <script src="config.js"></script>
 <script>
@@ -845,14 +874,26 @@
 
   // Formularz pokazuje się dopiero po kliknięciu „Dołączam”
   var formBox = document.getElementById("formBox"), joinCta = document.getElementById("joinCta");
-  function openForm(focus){
+  function pickOffer(o){
+    var r = document.querySelector('input[name="oferta"][value="' + o + '"]'); if (r) { r.checked = true; offerChanged(); }
+  }
+  function offerChanged(){
+    var o = (document.querySelector('input[name="oferta"]:checked') || {}).value || "program";
+    var tp = document.getElementById("talkPrice"), tw = document.getElementById("talkWhat");
+    if (tp) tp.textContent = o === "przewodnik" ? "27 zł" : "57 zł";
+    if (tw) tw.textContent = o === "przewodnik" ? "Przewodnik wyślę Ci mailem zaraz po płatności." : "Dostęp do aplikacji dostaniesz zaraz po płatności.";
+    if (typeof C !== "undefined" && C.PAY_URL && btn) btn.textContent = o === "przewodnik" ? "Wyślij zgłoszenie" : "Dołączam za 57 zł";
+  }
+  [].forEach.call(document.querySelectorAll('input[name="oferta"]'), function(r){ r.addEventListener("change", offerChanged); });
+  function openForm(focus, oferta){
+    if (oferta) pickOffer(oferta);
     formBox.classList.remove("hidden"); joinCta.classList.add("hidden");
     formBox.setAttribute("data-anim-done", "1"); formBox.classList.add("an-in", "an-done");
     track("dolaczam");
     setTimeout(function(){ formBox.scrollIntoView({ behavior: "smooth", block: "start" }); if (focus) try { document.getElementById("imie").focus({ preventScroll: true }); } catch (e) {} }, 30);
   }
   [].forEach.call(document.querySelectorAll('a[href="#zapis"]'), function(a){
-    a.addEventListener("click", function(e){ e.preventDefault(); openForm(true); });
+    a.addEventListener("click", function(e){ e.preventDefault(); openForm(true, a.getAttribute("data-oferta") || "program"); });
   });
   if (location.hash === "#zapis") openForm(false);
 
@@ -868,6 +909,8 @@
     document.getElementById("doneTitle").textContent = dup
       ? "Ten e-mail jest już na liście. Odezwę się wkrótce."
       : "Dzięki" + (name ? ", " + name : "") + "! Twoje zgłoszenie dotarło.";
+    var o = (form.querySelector('input[name="oferta"]:checked') || {}).value;
+    if (!dup && o === "przewodnik") document.getElementById("doneText").textContent = "Odezwę się do Ciebie osobiście, zwykle w ciągu 24 godzin. Po płatności wyślę Ci przewodnik mailem. Jeśli piszę mailem, zajrzyj też do folderu Oferty lub Spam.";
   }
 
   if (!C.PAY_URL) btn.textContent = "Wyślij zgłoszenie";
@@ -886,6 +929,7 @@
       email: f.email.value.trim().toLowerCase(),
       profil: f.profil.value.trim() || null,
       telefon: f.telefon.value.trim() || undefined,
+      oferta: (form.querySelector('input[name="oferta"]:checked') || {}).value || "program",
       jak_dlugo: f.jak_dlugo.value,
       wiadomosc: f.wiadomosc.value.trim() || null,
       wiek16: document.getElementById("wiek16").checked,
@@ -899,7 +943,7 @@
     if (!data.wiek16) return err("Program jest dla osób od 16 lat.");
     if (!data.zgoda) return err("Zaznacz zgodę na przetwarzanie danych.");
 
-    if (C.PAY_URL) {
+    if (C.PAY_URL && data.oferta === "program") {
       if (!document.getElementById("regulamin").checked) return err("Zaznacz akceptację regulaminu.");
       data.regulamin = true; data.action = "start";
       btn.disabled = true; btn.textContent = "Przechodzę do płatności...";
@@ -912,7 +956,7 @@
           throw new Error(d && d.error || "brak");
         })
         .catch(function(){
-          btn.disabled = false; btn.textContent = "Dołączam za 42 zł";
+          btn.disabled = false; btn.textContent = "Dołączam za 57 zł";
           err("Nie udało się otworzyć płatności. Spróbuj za chwilę albo napisz do mnie w DM.");
         });
       return;
@@ -935,7 +979,7 @@
         throw new Error(r.status);
       })
       .catch(function(){
-        btn.disabled = false; btn.textContent = C.PAY_URL ? "Dołączam za 42 zł" : "Wyślij zgłoszenie";
+        btn.disabled = false; btn.textContent = C.PAY_URL ? "Dołączam za 57 zł" : "Wyślij zgłoszenie";
         err("Coś poszło nie tak. Spróbuj ponownie albo napisz do mnie w DM.");
       });
   });
