@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Zadbany Pazurek | Przestań obgryzać paznokcie</title>
+<title>Zadbany Pazurek | Przestań obgryzać paznokcie i skórki</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="Przestań obgryzać paznokcie w 90 dni. Bez silnej woli, z planem w telefonie: aplikacja, codzienne ćwiczenia i spotkania na żywo. 57 zł, 14 dni gwarancji zwrotu.">
+<meta name="description" content="Przestań obgryzać paznokcie i skórki w 90 dni. Bez silnej woli, z planem w telefonie: aplikacja, codzienne ćwiczenia i spotkania na żywo. 57 zł, 14 dni gwarancji zwrotu.">
 <meta property="og:title" content="Zadbany Pazurek | Przestań obgryzać paznokcie">
 <meta property="og:description" content="Przestań obgryzać paznokcie w 90 dni. Bez silnej woli, z planem w telefonie. Program Tomasza Świadomość.">
 <meta property="og:type" content="website">
@@ -266,6 +266,7 @@
   .quote blockquote{margin:0;color:var(--ink);font-size:17px;line-height:1.6}
   .quote figcaption{display:flex;align-items:center;gap:12px;border-top:1px solid var(--line);padding-top:14px}
   .quote .av{width:40px;height:40px;border-radius:4px;background:var(--orange);color:#FFFFFF;display:grid;place-items:center;font:800 20px var(--display);flex:none}
+  .quote img.av{object-fit:cover;border-radius:50%;width:48px;height:48px;border:2px solid #CFE4F2;background:none}
   .quote figcaption b{display:block;font:700 20px/1.1 var(--display);letter-spacing:.06em;text-transform:uppercase}
   .quote figcaption span{font-size:13px;color:var(--dim)}
   .quote.big blockquote{font-size:19px}
@@ -352,6 +353,23 @@
   .bonus-tile p{color:var(--muted);font-size:18px;margin:0}
   .guarantee{display:flex;gap:10px;align-items:flex-start;text-align:left;margin-top:16px;padding:12px 14px;border-radius:10px;background:#EAF5FC;color:var(--ink);font-size:14px;line-height:1.45}
   .guarantee svg{width:26px;height:26px;flex:none;color:var(--orange)}
+  .launch{display:inline-block;background:#FFF3E0;color:#8A4B00;font:700 13px var(--display);letter-spacing:.12em;text-transform:uppercase;border-radius:99px;padding:6px 14px;margin:2px 0 10px}
+  .skin-note{margin-top:22px;background:#EAF5FC;border-left:4px solid var(--orange);border-radius:8px;padding:16px 18px;font-size:16px;line-height:1.55}
+  .cost-lead{color:var(--muted);max-width:640px;margin:14px 0 26px}
+  .cost-table{border:1.5px solid var(--line,#CFE4F2);border-radius:var(--r);overflow:hidden;background:var(--card)}
+  .cost-row{display:grid;grid-template-columns:1fr;gap:6px;padding:16px 18px;border-top:1px solid var(--line,#CFE4F2)}
+  .cost-row:first-child{border-top:0}
+  .cost-row b[role=rowheader]{font:800 18px var(--display);text-transform:uppercase;letter-spacing:.06em}
+  .cost-row .bad,.cost-row .good{position:relative;padding-left:28px;font-size:15.5px;line-height:1.5}
+  .cost-row .bad{color:#7A3B2E}.cost-row .bad:before{content:"✕";position:absolute;left:4px;top:0;color:#C2563F;font-weight:700}
+  .cost-row .good{color:var(--ink)}.cost-row .good:before{content:"✓";position:absolute;left:4px;top:0;color:var(--orange);font-weight:700}
+  .cost-headrow{display:none}
+  @media(min-width:760px){
+    .cost-row{grid-template-columns:150px 1fr 1fr;gap:22px;align-items:start;padding:18px 24px}
+    .cost-headrow{display:grid;background:#EAF5FC;font:700 13px var(--display);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+    .cost-headrow span:last-child{color:var(--orange)}
+  }
+  .cost-note{color:var(--muted);font-size:15px;margin:18px 0 0;max-width:720px}
   .pdf-offer{margin-top:26px;display:grid;gap:22px;align-items:center;background:var(--card);border:1.5px dashed #9CCBEA;border-radius:var(--r);padding:22px}
   @media(min-width:760px){.pdf-offer{grid-template-columns:150px 1fr;padding:26px 30px}}
   .pdf-offer img{width:150px;max-width:100%;border-radius:6px;box-shadow:0 10px 26px rgba(14,42,68,.18);justify-self:center}
@@ -392,9 +410,9 @@
     <div class="hero-grid">
       <div>
         <span class="eyebrow">Program 90 dni · Tomasz Świadomość</span>
-        <h1>Przestań obgryzać paznokcie <em>w 90 dni</em></h1>
+        <h1>Przestań obgryzać paznokcie i&nbsp;skórki <em>w&nbsp;90 dni</em></h1>
         <p class="slogan">Bez silnej woli.<br><em>Z planem w telefonie.</em></p>
-        <p class="sub">Obgryzanie to nawyk, który da się przeprogramować.<br>Aplikacja, codzienne ćwiczenia i spotkania na żywo w każdą niedzielę prowadzą Cię krok po kroku.</p>
+        <p class="sub">Obgryzanie paznokci i skórek to nawyk, który da się przeprogramować.<br>Aplikacja, codzienne ćwiczenia i spotkania na żywo w każdą niedzielę prowadzą Cię krok po kroku.</p>
         <div class="cta-row">
           <a class="btn" href="#zapis">Dołączam za 57 zł</a>
         </div>
@@ -424,13 +442,14 @@
   <div class="wrap">
     <span class="eyebrow o">Dlaczego tak się dzieje</span>
     <h2>Dlaczego nawyk jest <em>silniejszy od Ciebie</em></h2>
-    <p class="lead">Obgryzanie paznokci to nie wada charakteru. Psychologia nazywa to BFRB, czyli powtarzalnym zachowaniem skupionym na ciele. Ma swoje mechanizmy. Kiedy je znasz, przestajesz walczyć na ślepo.</p>
+    <p class="lead">Obgryzanie paznokci i skórek ma swoją nazwę. Psychologia nazywa to BFRB, czyli powtarzalnym zachowaniem skupionym na ciele. Ma swoje mechanizmy. Kiedy je znasz, przestajesz walczyć na ślepo.</p>
     <div class="habit-pics" id="habitPics"></div>
     <h3 style="margin-top:44px">Nawyk czeka na Twoją nudę</h3>
     <p class="muted">Badania pokazują, że najsilniejsze wyzwalacze to nuda i frustracja. Sprawdź, które znasz:</p>
     <div class="chips">
-      <span class="chip">Nuda</span><span class="chip">Frustracja</span><span class="chip">Stres i lęk</span><span class="chip">Niecierpliwość</span><span class="chip">Perfekcjonizm</span><span class="chip">Serial na kanapie</span><span class="chip">Telefon</span><span class="chip">Komputer</span><span class="chip">Auto</span><span class="chip">Czekanie</span>
+      <span class="chip">Nuda</span><span class="chip">Frustracja</span><span class="chip">Stres i lęk</span><span class="chip">Niecierpliwość</span><span class="chip">Perfekcjonizm</span><span class="chip">Serial na kanapie</span><span class="chip">Telefon</span><span class="chip">Komputer</span><span class="chip">Auto</span><span class="chip">Czekanie</span><span class="chip">Odstająca skórka</span>
     </div>
+    <div class="skin-note"><b>Obgryzasz albo skubiesz skórki, a nie paznokcie?</b> Ten program jest też dla Ciebie. Obgryzanie skórek to ten sam rodzaj nawyku, z tymi samymi wyzwalaczami. Działają na niego te same ćwiczenia, a codzienna higiena w aplikacji pomaga skórkom się zagoić.</div>
   </div>
 </section>
 
@@ -446,11 +465,11 @@
       <div class="card phase"><small>Tydzień 9–12</small><h3>Utrwalenie</h3><p>Nowa reakcja staje się Twoja. Uczysz się, co robić w trudniejsze dni, żeby nie wrócić.</p></div>
     </div>
       <div class="proof" id="proof">
-      <div class="proof-h">Na czym opiera się program: wynik badania metody</div>
-      <div class="proof-row"><div class="proof-top"><span>Habit Reversal Training <b>(metoda, na której opiera się program)</b></span><b class="pct o"><span data-count="99">99</span>%</b></div><div class="track"><span class="fill o" style="--w:99%"></span></div></div>
-      <div class="proof-row"><div class="proof-top"><span>Inna metoda dla porównania</span><b class="pct"><span data-count="60">60</span>%</b></div><div class="track"><span class="fill" style="--w:60%"></span></div></div>
+      <div class="proof-h">O ile spadła liczba epizodów obgryzania? Wynik badania</div>
+      <div class="proof-row"><div class="proof-top"><span><b>Odwracanie nawyku (HRT)</b>, czyli metoda, na której opiera się program: zauważasz impuls i zastępujesz go innym ruchem rąk</span><b class="pct o"><span data-count="99">99</span>%</b></div><div class="track"><span class="fill o" style="--w:99%"></span></div></div>
+      <div class="proof-row"><div class="proof-top"><span><b>Praktyka negatywna</b>, czyli metoda porównawcza: celowe, wielokrotne powtarzanie ruchu obgryzania przed lustrem, bez gryzienia</span><b class="pct"><span data-count="60">60</span>%</b></div><div class="track"><span class="fill" style="--w:60%"></span></div></div>
       <div class="scale"><span>0%</span><span>50%</span><span>100%</span></div>
-      <p class="proof-note">O tyle średnio spadła liczba epizodów obgryzania w grupie, z utrzymaniem przez 5 miesięcy. <b>To wynik badania klinicznego metody prowadzonej z terapeutą, nie wynik tego programu.</b> Azrin, Nunn i Frantz, Behaviour Research and Therapy, 1980, 97 osób. Efekty są indywidualne i zależą od regularności ćwiczeń.</p>
+      <p class="proof-note">Przykład: ktoś obgryzał 20 razy dziennie. Po treningu odwracania nawyku średnio zostawał mniej niż 1 raz, po praktyce negatywnej około 8 razy. Efekt utrzymał się przez 5 miesięcy. <b>To wynik badania klinicznego metody prowadzonej z terapeutą. Wyniki programu mogą być inne.</b> Azrin, Nunn i Frantz, Behaviour Research and Therapy, 1980, 97 osób. Efekty są indywidualne i zależą od regularności ćwiczeń.</p>
       <div class="proof-total"><b data-count="7">7</b><span>badań naukowych</span><b>888</b><span>osób łącznie</span></div>
       <details class="src"><summary>Metody z programu sprawdzono w 7 badaniach naukowych. Zobacz, w jakich</summary><ul><li>Azrin, Nunn, Frantz (1980): odwracanie nawyku, 97 osób</li><li>Moritz i in. (2023): delikatny dotyk zamiast obgryzania, 268 osób</li><li>Moritz i in. (2011): decoupling przy obgryzaniu paznokci, 72 osoby</li><li>Moritz i in.: porównanie trzech technik samopomocy, 113 osób</li><li>Moritz i in.: samopomoc z filmami, 217 osób</li><li>Twohig i in. (2003): odwracanie nawyku a placebo, 30 osób</li><li>Ghanizadeh i in.: odwracanie nawyku u dzieci i młodzieży, 91 osób</li></ul></details>
 
@@ -544,7 +563,7 @@
     <div class="bonus-head center">
       <span class="bonus-badge">Bonus</span>
       <h2>W programie dostajesz <em>2 bonusy</em></h2>
-      <p class="lead">Żeby paznokcie nie tylko przestały być obgryzane, ale też zdrowo odrosły.</p>
+      <p class="lead">Żeby paznokcie i skórki mogły zdrowo odrosnąć.</p>
     </div>
     <div class="bonus-grid">
       <div class="bonus-tile">
@@ -563,6 +582,24 @@
   </div>
 </section>
 
+<!-- 6b. ILE CIĘ TO KOSZTUJE -->
+<section id="koszt">
+  <div class="wrap">
+    <span class="eyebrow o">Policz to uczciwie</span>
+    <h2>Ile kosztuje Cię <em>obgryzanie?</em></h2>
+    <p class="cost-lead">Policz, ile wydajesz na hybrydy, gorzkie lakiery i plastry. Dodaj wizyty, nerwy i każdą sytuację, w której chowasz dłonie. Tyle naprawdę kosztuje Cię ten nawyk.</p>
+    <div class="cost-table" role="table">
+      <div class="cost-row cost-headrow" role="row"><span role="columnheader"></span><span role="columnheader">Gdy zostajesz z nawykiem</span><span role="columnheader">Po 90 dniach programu</span></div>
+      <div class="cost-row" role="row"><b role="rowheader">Dłonie</b><span class="bad">Chowasz ręce przy podawaniu dłoni, na zdjęciach, na randce i na rozmowie o pracę</span><span class="good">Pokazujesz dłonie bez myślenia o nich</span></div>
+      <div class="cost-row" role="row"><b role="rowheader">Pieniądze</b><span class="bad">Hybrydy i manicure „na zakrycie”, gorzkie lakiery, plastry, kremy. Co miesiąc od nowa</span><span class="good"><b>57 zł raz</b>, czyli mniej niż 65 groszy dziennie</span></div>
+      <div class="cost-row" role="row"><b role="rowheader">Zdrowie</b><span class="bad">Zadry, krwawiące skórki, stany zapalne wokół paznokci, obciążone zęby</span><span class="good">Zadbane skórki i płytka, która w końcu ma czas odrosnąć</span></div>
+      <div class="cost-row" role="row"><b role="rowheader">Głowa</b><span class="bad">Wstyd, „znowu to zrobiłem”, poczucie, że nie panujesz nad sobą</span><span class="good">Poczucie kontroli i nowy nawyk zamiast starego</span></div>
+      <div class="cost-row" role="row"><b role="rowheader">Czas</b><span class="bad">Kolejne lata prób na samej silnej woli</span><span class="good">Plan na 90 dni krok po kroku, z przypomnieniami i spotkaniami na żywo</span></div>
+    </div>
+    <p class="cost-note">Dla porównania: jedna wizyta u psychologa kosztuje zwykle kilka razy więcej niż cały program, a tu masz plan na 3 miesiące i cotygodniowe spotkania grupy wsparcia.</p>
+  </div>
+</section>
+
 <!-- 7. OFERTA -->
 <section id="cena">
   <div class="wrap">
@@ -572,7 +609,7 @@
         <h2>Pełny program <em>za 57 zł</em></h2>
         <ul class="check">
           <li><b>Aplikacja Zadbany Pazurek:</b> plan na 12 tygodni, ćwiczenia dnia, dziennik, SOS i śledzenie postępu</li>
-          <li><b>Codzienna higiena paznokci:</b> co robić, czego używać i jak pielęgnować odrastające paznokcie. Proste instrukcje z grafikami i odhaczanie w aplikacji</li>
+          <li><b>Codzienna higiena paznokci:</b> co robić, czego używać i jak pielęgnować odrastające paznokcie i gojące się skórki. Proste instrukcje z grafikami i odhaczanie w aplikacji</li>
           <li><b>Bonus PDF „Suplementacja i odżywianie”:</b> co jeść, jakie badania zrobić i kiedy suplementy mają sens. Jedna strona A4</li>
           <li><b>Spotkania na żywo w każdą niedzielę o 20:00</b> (Google Meet): grupa wsparcia, omówienie postępów i, jeśli chcecie, wspólna medytacja. Link masz w aplikacji</li>
           <li><b>Ludzi,</b> którzy przechodzą przez to samo co Ty, na spotkaniach na żywo</li>
@@ -580,8 +617,9 @@
       </div>
       <div class="price">
         <div class="kicker">Program 90 dni</div>
+        <div class="launch">Cena na start dla pierwszych 50 osób</div>
         <div class="tag">57 zł</div>
-        <p>Płacisz raz, bez abonamentu.</p>
+        <p>Płacisz raz, bez abonamentu. Po 50 osobach cena wzrośnie.</p>
         <a class="btn" href="#zapis">Dołączam za 57 zł</a>
         <div class="guarantee"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l8 3v6c0 5-3.5 9.3-8 11-4.5-1.7-8-6-8-11V5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M8.5 12l2.5 2.5 4.5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>14 dni gwarancji zwrotu.</b> Jeśli w ciągu 14 dni uznasz, że program nie jest dla Ciebie, napisz do mnie, a zwrócę Ci pieniądze.</span></div>
       </div>
@@ -634,7 +672,15 @@
         <label for="profil">Nazwa profilu na Instagramie lub TikToku <span class="opt">(opcjonalnie)</span></label>
         <input type="text" id="profil" name="profil" placeholder="@twojprofil" maxlength="200">
 
-        <label for="jak_dlugo">Jak długo obgryzasz paznokcie?</label>
+        <label for="co_obgryza">Co obgryzasz?</label>
+        <select id="co_obgryza" name="co_obgryza" required>
+          <option value="">Wybierz</option>
+          <option value="paznokcie">Paznokcie</option>
+          <option value="skorki">Skórki</option>
+          <option value="oba">Paznokcie i skórki</option>
+        </select>
+
+        <label for="jak_dlugo">Od jak dawna?</label>
         <select id="jak_dlugo" name="jak_dlugo" required>
           <option value="">Wybierz</option>
           <option>Mniej niż rok</option>
@@ -673,9 +719,10 @@
       <div>
         <span class="eyebrow o">Kim jestem</span>
         <h2>Tomasz <em>Świadomość</em></h2>
-        <p>Jestem trenerem mentalnym, pracuję też hipnozą. Pomagam ludziom wychodzić z destrukcyjnych nawyków.</p>
+        <p>Jestem trenerem mentalnym, posługuję się między innymi hipnozą. Pomagam ludziom wychodzić z destrukcyjnych nawyków.</p>
         <div class="about-stat"><b>200+</b><span>osobom pomogłem wyjść z destrukcyjnych nawyków: zrozumieć, skąd się wzięły, także w trudnych doświadczeniach z przeszłości, i przeprogramować swoje reakcje.</span></div>
-        <p>Widzę jedno: nawyk nie znika od zakazów. Znika, kiedy rozumiesz, czemu służy, i dajesz mózgowi coś w zamian.</p>
+        <p>Na sesjach zauważyłem, że jeden problem wraca u moich klientów wyjątkowo często: obgryzanie paznokci i skórek. Ludzie latami wstydzili się swoich dłoni i próbowali już wszystkiego. Dlatego postanowiłem stworzyć ten program.</p>
+        <p>Najlepiej działa połączenie dwóch rzeczy: zrozumienia, czemu nawyk służy, i nowego ruchu, który dajesz rękom w zamian.</p>
         <p>Zadbany Pazurek to ta praca zamknięta w aplikacji, którą masz zawsze przy sobie.</p>
         <p><a id="ig" href="#" target="_blank" rel="noopener">Zobacz mój profil na Instagramie →</a></p>
       </div>
@@ -688,16 +735,17 @@
   <div class="wrap" style="max-width:820px">
     <h2 class="center">Najczęstsze <em>pytania</em></h2>
     <div style="margin-top:30px">
-      <details><summary>Czy to naprawdę działa?</summary><p>Program opiera się na metodach, które mają najlepsze wyniki w badaniach: odwracaniu nawyku, zastępowaniu go innym ruchem i uważności. Nie obiecuję cudu w tydzień. Obiecuję plan, który prowadzi Cię krok po kroku przez 90 dni.</p></details>
+      <details><summary>Czy to naprawdę działa?</summary><p>Program opiera się na metodach, które mają najlepsze wyniki w badaniach: odwracaniu nawyku, zastępowaniu go innym ruchem i uważności. Dostajesz plan, który prowadzi Cię krok po kroku przez 90 dni.</p></details>
       <details><summary>Ile czasu dziennie mi to zajmie?</summary><p>Około 5 do 10 minut. Zadanie i ćwiczenie dnia, kilka szybkich zapisów i SOS wtedy, gdy go potrzebujesz.</p></details>
       <details><summary>Dla kogo jest program?</summary><p>Dla osób od 16 lat, które obgryzają paznokcie lub skórki i chcą przestać. Nie ma znaczenia, czy robisz to od roku, czy od dzieciństwa.</p></details>
+      <details><summary>Obgryzam głównie skórki. Czy to program dla mnie?</summary><p>Tak. Obgryzanie i skubanie skórek to ten sam rodzaj nawyku co obgryzanie paznokci. Ma te same wyzwalacze i działają na niego te same ćwiczenia. W formularzu zaznacz „Skórki”, a podczas rozmowy dopasujemy plan do Ciebie.</p></details>
       <details><summary>Czy to zastępuje terapię?</summary><p>Nie. To narzędzie wspierające. Jeśli obgryzanie powoduje rany lub infekcje albo idzie w parze z silnym lękiem czy obniżonym nastrojem, skonsultuj się z lekarzem lub psychoterapeutą.</p></details>
       <details><summary>Czy muszę coś instalować?</summary><p>Nie pobierasz niczego ze sklepu. Aplikacja działa w przeglądarce, a jej ikonę dodajesz do ekranu telefonu. Logujesz się kodem, który przychodzi na Twój e-mail, bez hasła.</p></details>
       <details><summary>Co z moimi danymi i zdjęciami?</summary><p>Dane są przechowywane na serwerach w Unii Europejskiej (Frankfurt). Zdjęć Twoich dłoni nie publikuję bez Twojej osobnej zgody.</p></details>
       <details><summary>Kiedy są spotkania na żywo?</summary><p>W każdą niedzielę o 20:00 czasu polskiego, w Google Meet. Link znajdziesz w aplikacji. Udział jest dobrowolny, możesz też tylko słuchać.</p></details>
-      <details><summary>Co, jeśli znowu zacznę obgryzać?</summary><p>To normalna część zmiany nawyku. Zapisujesz taki moment w aplikacji jako informację, nie porażkę. Z czasem widzisz, kiedy i dlaczego to się dzieje, a plan „jeśli… to…” i SOS pomagają w trudnych chwilach.</p></details>
-      <details><summary>Ile to kosztuje?</summary><p>Program 90 dni kosztuje 57 zł jednorazowo, bez abonamentu. Sam przewodnik PDF „Dlaczego obgryzasz paznokcie?” kosztuje 27 zł. Jeśli najpierw kupisz przewodnik, a potem dołączysz do programu, odliczę Ci te 27 zł.</p></details>
-      <details><summary>A jeśli program nie jest dla mnie?</summary><p>Masz 14 dni gwarancji zwrotu. Jeśli w tym czasie uznasz, że to nie dla Ciebie, napisz do mnie, a zwrócę Ci pieniądze.</p></details>
+      <details><summary>Co, jeśli znowu zacznę obgryzać?</summary><p>To normalna część zmiany nawyku. Zapisujesz taki moment w aplikacji jako cenną informację. Z czasem widzisz, kiedy i dlaczego to się dzieje, a plan „jeśli… to…” i SOS pomagają w trudnych chwilach.</p></details>
+      <details><summary>Ile to kosztuje?</summary><p>Program 90 dni kosztuje 57 zł jednorazowo, bez abonamentu. To cena na start dla pierwszych 50 osób. Sam przewodnik PDF „Dlaczego obgryzasz paznokcie?” kosztuje 27 zł. Jeśli najpierw kupisz przewodnik, a potem dołączysz do programu, odliczę Ci te 27 zł.</p></details>
+      <details><summary>Co, jeśli program nie jest dla mnie?</summary><p>Masz 14 dni gwarancji zwrotu. Jeśli w tym czasie uznasz, że to nie dla Ciebie, napisz do mnie, a zwrócę Ci pieniądze.</p></details>
     </div>
   </div>
 </section>
@@ -735,13 +783,14 @@
   <div class="wrap">
     <span class="eyebrow o">Opinie po sesjach hipnozy</span>
     <h2>Co mówią <em>moi klienci</em></h2>
-    <p class="lead">Fragmenty wiadomości od osób, z którymi pracowałem na sesjach hipnozy 1:1. To opinie o sesjach, nie o programie 90 dni.</p>
+    <p class="lead">Fragmenty wiadomości od osób, z którymi pracowałem na sesjach hipnozy 1:1. Dotyczą sesji hipnozy. Program 90 dni to osobny produkt.</p>
     <div class="quotes">
-      <figure class="quote"><svg class="mark" viewBox="0 0 30 24" aria-hidden="true"><path d="M0 24V14C0 6 4 1 12 0l1 4c-4 1-6 4-6 8h6v12H0zm17 0V14c0-8 4-13 12-14l1 4c-4 1-6 4-6 8h6v12H17z"/></svg><blockquote>Po 30 latach tego nawyku w końcu jestem wolny. Pierwszy raz w moim życiu mam piękne i zadbane paznokcie.</blockquote><figcaption><span class="av" aria-hidden="true">P</span><div><b>Paweł</b><span>30 lat obgryzania · po sesji hipnozy</span></div></figcaption></figure>
-      <figure class="quote"><svg class="mark" viewBox="0 0 30 24" aria-hidden="true"><path d="M0 24V14C0 6 4 1 12 0l1 4c-4 1-6 4-6 8h6v12H0zm17 0V14c0-8 4-13 12-14l1 4c-4 1-6 4-6 8h6v12H17z"/></svg><blockquote>Po tych dwóch sesjach hipnozy zrozumiałam, dlaczego miałam ten nawyk. Teraz reaguję, zanim pojawi się emocja.</blockquote><figcaption><span class="av" aria-hidden="true">O</span><div><b>Oliwia</b><span>po dwóch sesjach hipnozy</span></div></figcaption></figure>
-      <figure class="quote"><svg class="mark" viewBox="0 0 30 24" aria-hidden="true"><path d="M0 24V14C0 6 4 1 12 0l1 4c-4 1-6 4-6 8h6v12H0zm17 0V14c0-8 4-13 12-14l1 4c-4 1-6 4-6 8h6v12H17z"/></svg><blockquote>Minęły 3 tygodnie od naszej hipnozy. Jestem szybszy od tego odruchu i cały czas dbam o paznokcie.</blockquote><figcaption><span class="av" aria-hidden="true">M</span><div><b>Marcin</b><span>3 tygodnie po hipnozie</span></div></figcaption></figure>
-      <figure class="quote"><svg class="mark" viewBox="0 0 30 24" aria-hidden="true"><path d="M0 24V14C0 6 4 1 12 0l1 4c-4 1-6 4-6 8h6v12H0zm17 0V14c0-8 4-13 12-14l1 4c-4 1-6 4-6 8h6v12H17z"/></svg><blockquote>Przez większość życia borykałem się z tym. Teraz wiem, czym było to podyktowane, a ćwiczenia pomagają mi każdego dnia.</blockquote><figcaption><span class="av" aria-hidden="true">M</span><div><b>Michał</b><span>po sesji hipnozy</span></div></figcaption></figure>
-      <figure class="quote"><svg class="mark" viewBox="0 0 30 24" aria-hidden="true"><path d="M0 24V14C0 6 4 1 12 0l1 4c-4 1-6 4-6 8h6v12H0zm17 0V14c0-8 4-13 12-14l1 4c-4 1-6 4-6 8h6v12H17z"/></svg><blockquote>Nie obgryzam już skórek. W końcu o nie zadbałem i jestem o krok przed każdym ruchem.</blockquote><figcaption><span class="av" aria-hidden="true">M</span><div><b>Marek</b><span>po sesji hipnozy</span></div></figcaption></figure>
+      <figure class="quote"><svg class="mark" viewBox="0 0 30 24" aria-hidden="true"><path d="M0 24V14C0 6 4 1 12 0l1 4c-4 1-6 4-6 8h6v12H0zm17 0V14c0-8 4-13 12-14l1 4c-4 1-6 4-6 8h6v12H17z"/></svg><blockquote>To już drugi tydzień, jak nie mam zgryzionej skórki czy nadgryzionego paznokcia. To mój najdłuższy okres bez obgryzania, odkąd pamiętam. W końcu nie będę wstydzić się moich dłoni. Hipnoza plus ćwiczenia naprawdę działają.</blockquote><figcaption><img class="av" src="zdjecia/opinie/pawel-k.jpg" alt="" loading="lazy"><div><b>Paweł K.</b><span>2 tygodnie po sesji hipnozy</span></div></figcaption></figure>
+      <figure class="quote"><svg class="mark" viewBox="0 0 30 24" aria-hidden="true"><path d="M0 24V14C0 6 4 1 12 0l1 4c-4 1-6 4-6 8h6v12H0zm17 0V14c0-8 4-13 12-14l1 4c-4 1-6 4-6 8h6v12H17z"/></svg><blockquote>Po 30 latach tego nawyku w końcu jestem wolny. Pierwszy raz w moim życiu mam piękne i zadbane paznokcie.</blockquote><figcaption><img class="av" src="zdjecia/opinie/pawel.jpg" alt="" loading="lazy"><div><b>Paweł</b><span>30 lat obgryzania · po sesji hipnozy</span></div></figcaption></figure>
+      <figure class="quote"><svg class="mark" viewBox="0 0 30 24" aria-hidden="true"><path d="M0 24V14C0 6 4 1 12 0l1 4c-4 1-6 4-6 8h6v12H0zm17 0V14c0-8 4-13 12-14l1 4c-4 1-6 4-6 8h6v12H17z"/></svg><blockquote>Po tych dwóch sesjach hipnozy zrozumiałam, dlaczego miałam ten nawyk. Teraz reaguję, zanim pojawi się emocja.</blockquote><figcaption><img class="av" src="zdjecia/opinie/oliwia.jpg" alt="" loading="lazy"><div><b>Oliwia</b><span>po dwóch sesjach hipnozy</span></div></figcaption></figure>
+      <figure class="quote"><svg class="mark" viewBox="0 0 30 24" aria-hidden="true"><path d="M0 24V14C0 6 4 1 12 0l1 4c-4 1-6 4-6 8h6v12H0zm17 0V14c0-8 4-13 12-14l1 4c-4 1-6 4-6 8h6v12H17z"/></svg><blockquote>Minęły 3 tygodnie od naszej hipnozy. Jestem szybszy od tego odruchu i cały czas dbam o paznokcie.</blockquote><figcaption><img class="av" src="zdjecia/opinie/marcin.jpg" alt="" loading="lazy"><div><b>Marcin</b><span>3 tygodnie po hipnozie</span></div></figcaption></figure>
+      <figure class="quote"><svg class="mark" viewBox="0 0 30 24" aria-hidden="true"><path d="M0 24V14C0 6 4 1 12 0l1 4c-4 1-6 4-6 8h6v12H0zm17 0V14c0-8 4-13 12-14l1 4c-4 1-6 4-6 8h6v12H17z"/></svg><blockquote>Przez większość życia borykałem się z tym. Teraz wiem, czym było to podyktowane, a ćwiczenia pomagają mi każdego dnia.</blockquote><figcaption><img class="av" src="zdjecia/opinie/michal.jpg" alt="" loading="lazy"><div><b>Michał</b><span>po sesji hipnozy</span></div></figcaption></figure>
+      <figure class="quote"><svg class="mark" viewBox="0 0 30 24" aria-hidden="true"><path d="M0 24V14C0 6 4 1 12 0l1 4c-4 1-6 4-6 8h6v12H0zm17 0V14c0-8 4-13 12-14l1 4c-4 1-6 4-6 8h6v12H17z"/></svg><blockquote>Nie obgryzam już skórek. W końcu o nie zadbałem i jestem o krok przed każdym ruchem.</blockquote><figcaption><img class="av" src="zdjecia/opinie/marek.jpg" alt="" loading="lazy"><div><b>Marek</b><span>po sesji hipnozy</span></div></figcaption></figure>
     </div>
   </div>
 </section>
@@ -931,6 +980,7 @@
       telefon: f.telefon.value.trim() || undefined,
       oferta: (form.querySelector('input[name="oferta"]:checked') || {}).value || "program",
       jak_dlugo: f.jak_dlugo.value,
+      co_obgryza: f.co_obgryza.value,
       wiadomosc: f.wiadomosc.value.trim() || null,
       wiek16: document.getElementById("wiek16").checked,
       zgoda: document.getElementById("zgoda").checked,
@@ -939,7 +989,8 @@
     if (!data.imie) return err("Wpisz swoje imię.");
     if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(data.email)) return err("Sprawdź adres e-mail.");
     if (data.telefon && !/^[+0-9 ()-]{7,30}$/.test(data.telefon)) return err("Sprawdź numer telefonu (same cyfry, może być + na początku).");
-    if (!data.jak_dlugo) return err("Zaznacz, jak długo obgryzasz paznokcie.");
+    if (!data.co_obgryza) return err("Zaznacz, co obgryzasz.");
+    if (!data.jak_dlugo) return err("Zaznacz, od jak dawna to robisz.");
     if (!data.wiek16) return err("Program jest dla osób od 16 lat.");
     if (!data.zgoda) return err("Zaznacz zgodę na przetwarzanie danych.");
 
