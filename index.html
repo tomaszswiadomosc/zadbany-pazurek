@@ -660,43 +660,17 @@
           <label><input type="radio" name="oferta" value="program" checked> <span>Program 90 dni, 57 zł<small>Aplikacja, plan na każdy dzień, spotkania na żywo</small></span></label>
           <label><input type="radio" name="oferta" value="przewodnik"> <span>Przewodnik PDF, 27 zł<small>„Dlaczego obgryzasz paznokcie?”, wysyłam mailem</small></span></label>
         </div>
-        <label for="imie">Imię</label>
-        <input type="text" id="imie" name="imie" autocomplete="given-name" maxlength="80" required>
+        <label for="profil">Twoja nazwa na Instagramie, TikToku lub Facebooku</label>
+        <input type="text" id="profil" name="profil" placeholder="@twojprofil" maxlength="80" autocomplete="nickname" required>
 
         <label for="email">E-mail</label>
         <input type="email" id="email" name="email" autocomplete="email" maxlength="200" required>
-
-        <label for="telefon">Numer telefonu <span class="opt">(opcjonalnie, tak szybciej się skontaktuję)</span></label>
-        <input type="tel" id="telefon" name="telefon" autocomplete="tel" maxlength="30" placeholder="np. 600 100 200">
-
-        <label for="profil">Nazwa profilu na Instagramie lub TikToku <span class="opt">(opcjonalnie)</span></label>
-        <input type="text" id="profil" name="profil" placeholder="@twojprofil" maxlength="200">
-
-        <label for="co_obgryza">Co obgryzasz?</label>
-        <select id="co_obgryza" name="co_obgryza" required>
-          <option value="">Wybierz</option>
-          <option value="paznokcie">Paznokcie</option>
-          <option value="skorki">Skórki</option>
-          <option value="oba">Paznokcie i skórki</option>
-        </select>
-
-        <label for="jak_dlugo">Od jak dawna?</label>
-        <select id="jak_dlugo" name="jak_dlugo" required>
-          <option value="">Wybierz</option>
-          <option>Mniej niż rok</option>
-          <option>1 do 5 lat</option>
-          <option>Ponad 5 lat</option>
-          <option>Od dzieciństwa</option>
-        </select>
-
-        <label for="wiadomosc">Co najbardziej chcesz zmienić? <span class="opt">(opcjonalnie)</span></label>
-        <textarea id="wiadomosc" name="wiadomosc" maxlength="600" placeholder="Np. chcę mieć dłonie, których się nie wstydzę"></textarea>
 
         <div class="hp" aria-hidden="true"><label>Firma<input type="text" name="firma" tabindex="-1" autocomplete="off"></label></div>
 
         <label class="tick"><input type="checkbox" id="wiek16" required> <span>Mam ukończone 16 lat.</span></label>
         <label class="tick hidden" id="regBox"><input type="checkbox" id="regulamin"> <span>Akceptuję <a id="terms2" href="#" target="_blank" rel="noopener">regulamin</a> i chcę dostać dostęp do programu od razu po płatności. Wiem, że mam 14 dni na zwrot pieniędzy, jeśli program nie jest dla mnie.</span></label>
-        <label class="tick"><input type="checkbox" id="zgoda" required> <span>Zgadzam się na przetwarzanie podanych danych, w tym informacji o moim nawyku, w celu zapisu do programu Zadbany Pazurek. Administratorem jest Golden Teacher Tomasz Grzybowski (Tomasz Świadomość). Mogę wycofać zgodę w każdej chwili. Szczegóły w <a id="privacy" href="#" target="_blank" rel="noopener">polityce prywatności</a>.</span></label>
+        <label class="tick"><input type="checkbox" id="zgoda" required> <span>Zgadzam się na przetwarzanie podanych danych w celu zapisu do programu Zadbany Pazurek. Administratorem jest Golden Teacher Tomasz Grzybowski (Tomasz Świadomość). Mogę wycofać zgodę w każdej chwili. Szczegóły w <a id="privacy" href="#" target="_blank" rel="noopener">polityce prywatności</a>.</span></label>
 
         <p class="fine" id="talkNote" style="margin:4px 0 0">Po wysłaniu zgłoszenia odezwę się do Ciebie osobiście, zwykle w ciągu 24 godzin. Porozmawiamy chwilę, a płatność <span id="talkPrice">57 zł</span> (BLIK lub przelew) ustalimy dopiero wtedy. <span id="talkWhat">Dostęp do aplikacji dostaniesz zaraz po płatności.</span></p>
         <button class="btn" type="submit" id="send" style="width:100%;margin-top:6px">Dołączam za 57 zł</button>
@@ -705,7 +679,7 @@
       <div class="done hidden" id="done">
         <div class="big">Gotowe</div>
         <h3 id="doneTitle">Dzięki! Jesteś na liście.</h3>
-        <p id="doneText">Odezwę się do Ciebie osobiście, zwykle w ciągu 24 godzin: telefonicznie, w DM albo mailem. Jeśli piszę mailem, zajrzyj też do folderu Oferty lub Spam.</p>
+        <p id="doneText">Odezwę się do Ciebie osobiście, zwykle w ciągu 24 godzin: w DM albo mailem. Jeśli piszę mailem, zajrzyj też do folderu Oferty lub Spam.</p>
       </div>
     </div>
   </div>
@@ -939,7 +913,7 @@
     formBox.classList.remove("hidden"); joinCta.classList.add("hidden");
     formBox.setAttribute("data-anim-done", "1"); formBox.classList.add("an-in", "an-done");
     track("dolaczam");
-    setTimeout(function(){ formBox.scrollIntoView({ behavior: "smooth", block: "start" }); if (focus) try { document.getElementById("imie").focus({ preventScroll: true }); } catch (e) {} }, 30);
+    setTimeout(function(){ formBox.scrollIntoView({ behavior: "smooth", block: "start" }); if (focus) try { document.getElementById("profil").focus({ preventScroll: true }); } catch (e) {} }, 30);
   }
   [].forEach.call(document.querySelectorAll('a[href="#zapis"]'), function(a){
     a.addEventListener("click", function(e){ e.preventDefault(); openForm(true, a.getAttribute("data-oferta") || "program"); });
@@ -974,23 +948,16 @@
     var f = form.elements;
     if (f.firma.value) { success("", false); return; } // bot
     var data = {
-      imie: f.imie.value.trim(),
+      imie: f.profil.value.trim().replace(/^@+/, ""),
       email: f.email.value.trim().toLowerCase(),
-      profil: f.profil.value.trim() || null,
-      telefon: f.telefon.value.trim() || undefined,
+      profil: f.profil.value.trim(),
       oferta: (form.querySelector('input[name="oferta"]:checked') || {}).value || "program",
-      jak_dlugo: f.jak_dlugo.value,
-      co_obgryza: f.co_obgryza.value,
-      wiadomosc: f.wiadomosc.value.trim() || null,
       wiek16: document.getElementById("wiek16").checked,
       zgoda: document.getElementById("zgoda").checked,
       zrodlo: zrodlo
     };
-    if (!data.imie) return err("Wpisz swoje imię.");
+    if (!data.imie) return err("Wpisz swoją nazwę z Instagrama, TikToka lub Facebooka.");
     if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(data.email)) return err("Sprawdź adres e-mail.");
-    if (data.telefon && !/^[+0-9 ()-]{7,30}$/.test(data.telefon)) return err("Sprawdź numer telefonu (same cyfry, może być + na początku).");
-    if (!data.co_obgryza) return err("Zaznacz, co obgryzasz.");
-    if (!data.jak_dlugo) return err("Zaznacz, od jak dawna to robisz.");
     if (!data.wiek16) return err("Program jest dla osób od 16 lat.");
     if (!data.zgoda) return err("Zaznacz zgodę na przetwarzanie danych.");
 
