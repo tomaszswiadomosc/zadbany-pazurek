@@ -65,8 +65,8 @@
 .an-arch:hover img{transform:scale(1.05)}
 
 /* 7. PASEK POSTĘPU PRZEWIJANIA (tworzony automatycznie przez skrypt) */
-#an-prog{position:fixed;top:0;left:0;height:3px;width:0;z-index:9999;pointer-events:none;
-  background:linear-gradient(90deg,var(--an-c1),var(--an-c2));transition:width .12s linear}
+#an-prog{position:fixed;top:0;left:0;height:3px;width:100%;z-index:9999;pointer-events:none;
+  background:linear-gradient(90deg,var(--an-c1),var(--an-c2));transform:scaleX(0);transform-origin:0 50%}
 
 /* 8. PASEK HASEŁ (marquee) – treść wpisz dwa razy, żeby pętla była płynna */
 .an-mq{overflow:hidden;padding:18px 0;background:var(--an-dark)}
@@ -84,10 +84,51 @@
   background:linear-gradient(180deg,rgba(23,21,59,.66),rgba(23,21,59,.5) 45%,rgba(23,21,59,.78))}
 .an-band h2{color:#fff;text-shadow:0 2px 30px rgba(0,0,0,.35)}
 
+/* 11. STYL ZEN: START STRONY (hero) */
+.an-js .an-hs{opacity:0;transform:translateY(26px);transition:opacity .9s var(--an-ease),transform 1s var(--an-ease);transition-delay:var(--hd,0s)}
+.an-js .an-go .an-hs{opacity:1;transform:none}
+.an-js .an-hm{opacity:0;transform:scale(.86) rotate(-4deg);transition:opacity 1.2s var(--an-ease),transform 1.6s var(--an-ease);transition-delay:.15s}
+.an-js .an-go .an-hm{opacity:1;transform:none}
+.an-js .an-hp{opacity:0;transform:scale(.55);transition:opacity .5s ease,transform .8s cubic-bezier(.34,1.56,.64,1);transition-delay:var(--hd,0s)}
+.an-js .an-go .an-hp{opacity:1;transform:none}
+
+/* 12. SŁOWA SPOD MASKI (nagłówek hero i nagłówki sekcji) */
+.an-js .an-ws .an-w{display:inline-block;overflow:hidden;vertical-align:bottom;padding:0 .07em .16em;margin:0 -.07em -.16em}
+.an-js .an-ws .an-wi{display:inline-block;transform:translateY(118%);transition:transform 1s var(--an-ease);transition-delay:calc(var(--hd,0s) + var(--wi,0) * 70ms)}
+.an-js .an-go .an-ws .an-wi,.an-js .an-ws.an-in .an-wi{transform:none}
+.an-js .an-ws.an-done .an-w{overflow:visible}
+.an-js .an-ws.an-line:after{width:0;transition:width .9s .5s var(--an-ease)}
+.an-js .an-ws.an-line.an-in:after{width:56px}
+
+/* 13. ZDJĘCIA: POWOLNE ODDALENIE 120% → 100% (i lekki ruch w kadrze) */
+.an-js .an-zoom-in{scale:1.2;transition:scale 1.8s var(--an-ease)}
+.an-js .an-zoom-in.an-in{scale:1}
+.an-js .an-drift.an-in{scale:1.08}
+
+/* 14. HASŁO NA PASIE: PODŚWIETLANIE SŁOWO PO SŁOWIE */
+.an-js .an-hwi{opacity:.28;transition:opacity .4s ease}
+.an-js .an-hwi.on{opacity:1}
+
+/* 15. KARTY W STOSIE (kroki przyklejają się u góry i nachodzą na siebie) */
+.an-js .an-stack{display:block}
+.an-js .an-stack>li{position:sticky;top:calc(84px + var(--si,0) * 16px);margin-bottom:24vh;transform-origin:50% 0;
+  box-shadow:0 22px 44px -30px rgba(14,42,68,.4)}
+.an-js .an-stack>li:last-child{margin-bottom:0}
+
+/* 16. LICZNIKI: cyfry o stałej szerokości, żeby tekst nie skakał */
+.an-num{font-variant-numeric:tabular-nums}
+
 /* 10. OSOBY Z WYŁĄCZONYMI ANIMACJAMI W TELEFONIE – wszystko widać od razu */
 @media (prefers-reduced-motion:reduce){
   .an-js [data-anim]{opacity:1!important;transform:none!important;filter:none!important;clip-path:none!important;transition:none!important}
   .an-js [data-anim] .an-zoom{transform:none!important}
   .an-js .an-line[data-anim]:after{width:56px}
   .an-mq-track{animation:none}
+  .an-js .an-hs,.an-js .an-hm,.an-js .an-hp,.an-js .an-ws .an-wi{opacity:1!important;transform:none!important;transition:none!important}
+  .an-js .an-zoom-in{scale:1!important}.an-js .an-hwi{opacity:1!important}
+  .an-js .an-stack>li{position:static;margin-bottom:10px;scale:1!important;filter:none!important}
+  #an-prog{display:none}
 }
+
+/* 17. BEZPIECZNIK: nic nie wychodzi poza ekran w poziomie (clip nie psuje przyklejania) */
+html.an-js,html.an-js body{overflow-x:clip}
